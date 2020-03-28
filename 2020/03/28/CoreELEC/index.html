@@ -16,7 +16,7 @@
 <meta property="og:description" content="准备：N1、CoreELEC-PhiComm_N1.arm-9.0.3.img包、CoreELEC-Phicomm-N1.arm-9.2.1.tar升级文件、N1-ADBU盘启动（傻瓜包）.zip和N1刷机脚本.7z两个刷机脚本、USB Image Tool软件，还有其它一些小插件，网上可以搜到。（当然，大多数工具我会放在我的云盘里，自己在我的主页左下角找）。1、路由wan口断网，lan口接电脑、">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-27T16:02:47.000Z">
-<meta property="article:modified_time" content="2020-03-27T17:08:13.616Z">
+<meta property="article:modified_time" content="2020-03-27T23:50:58.424Z">
 <meta property="article:author" content="书 半 卷">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
@@ -37,7 +37,7 @@
   <style type="text/css">
   
     #container.show {
-      background: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
+      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
     }
   </style>
   
@@ -156,7 +156,7 @@ daovoice('update');
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: linear-gradient(to right, #f83600 0%, #f9d423 100%)"></div>
+  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -298,11 +298,12 @@ daovoice('update');
 <p>Caddy 文件浏览：http://&lt;N1的IP&gt;:1002，账号密码caddy:caddy，显示外接存储下的download目录，配置文件位于/etc/Caddyfile。<br>Caddy WebDAV：http://&lt;N1的IP&gt;:1002/webdav，账号密码caddy:caddy，显示外接存储下的download目录，可配合Potplayer, Nplayer, Kodi等软件用于播放视频。<br>FileBrowser文件管理：http://&lt;N1的IP&gt;:1003，账号密码caddy:caddy，可在Web界面修改各项设置。<br>如需外网访问，使用路由器设置端口映射即可，考虑到安全因素，建议修改密码后操作</p>
 <p><strong>注意事项：</strong><br>docker run会映射端口，运行前确认端口未被使用。<br>“51413”为transmission交换数据的端口，需要映射到公网（没有好像会影响上传）<br>如需手动修改Transmission配置文件，先退出进程。（通过caddy直接修改settings.json文件配置参数，改账户和密码）</p>
 <p>15、安装aria2和webUI容器（目前还没安装成功，进不了设置界面）<br>docker build -t=”leafney/alpine-aria2-webui”<br>docker run –name aria2ui –restart always -p 6800:6800 -p 6801:6801 -p 51413:51413 -p 51415:51415 -d -v /var/media/sda5-usb-JMicron_Tech_DB1/download:/aria2down wahyd4/aria2-ui</p>
-<p>###下面附上一些常见需要用到的命令：<br>新建data文件夹mkdir data<br>重启容器docker restart &lt;容器名&gt;<br>查看pull下来的镜像docker image<br>查看全部容器docker ps -a<br>删除某个容器docker rm &lt;容器id&gt;  （或docker rm &lt;容器名称&gt;）<br>停止所有的容器docker stop $(docker ps -aq)<br>删除所有停止的容器docker rm $(docker ps -aq)<br>删除所有镜像docker rmi $(docker images -q)<br>删除某个镜像docker rmi &lt;镜像名称&gt;<br>删除所有未打aaaa标签的镜像docker rmi $(docker images -q -f aaaa=true)<br>杀死所有正在运行的容器docker kill $(docker ps -a -q)<br>####目录挂载：<br>docker run -it -v &lt;宿主机目录&gt;:&lt;容器目录&gt; &lt;镜像名&gt; &lt;命令&gt;<br>（或者）<br>docker run -it –mount type=bind,source=&lt;宿主目录&gt;,target=&lt;容器目录&gt; &lt;镜像名&gt; &lt;命令&gt;<br><strong>区别</strong>： -v 参数可以,挂载多个主机目录<br><strong>例如</strong>：docker run -it -P –name N1 -v /home/amor/Documents/:/opt/web_doc -v /home/amor/Downloads/:/opt/web_down image-server /bin/bash<br>容器中输入命令df -h可以查看硬盘的使用情况，看出docker的路径与主机上的路径的位置关系。</p>
-<p>####用docker export/import备份运行中的容器为压缩文件，和从备份文件恢复镜像：<br>docker export 导出容器为压缩文件（压缩文件位置是/storage，用ls命令可以看到）<br><strong>命令格式如下:docker export -o “path for generated tar file” “container name”</strong><br>例如：<strong>docker export -o nginx.tar nginx-test</strong>把一个运行的容器(nginx-test)导出为nginx.tar文件<br>docker import 把导出的文件系统导入为镜像并重命名<br>例如：<strong>docker import alpine.tar myalpine</strong>把刚导出的容器文件alpine.tar系统创建为镜像,并命名为myalpine</p>
-<p>####修改容器的挂载目录<br>方法1：提交现有容器为新镜像，然后重新运行（$PWD表示当前目录）<br>docker commit &lt;容器ID&gt; &lt;新镜像名&gt;<br>docker run -ti -v “$PWD/dir1”:/dir1 -v “$PWD/dir2”:/dir2 &lt;新镜像名&gt; /bin/bash<br>然后停止旧容器，并使用新容器，如果由于某种原因需要新容器使用旧名称，请在删除旧容器后使用docker rename<br>方法2：export容器为镜像，然后import为新镜像<br>docker container export -o &lt;tar文件名&gt; 容器ID<br>docker import &lt;tar文件名&gt; &lt;新镜像名&gt;<br>docker run -ti -v “$PWD/dir1”:/dir1 -v “$PWD/dir2”:/dir2 newimagename /bin/bash<br>然后停止旧容器，并使用新容器，如果由于某种原因需要新容器使用旧名称，请在删除旧容器后使用docker rename</p>
-<p>####上传软件到容器中<br><strong>docker cp  xxx.tar  mycentos:/root/</strong><br>####在容器中安装软件(还没尝试)</p>
-<p>####将交互式的容器提交为一个新的镜像<br>docker commit &lt;容器ID&gt; &lt;新镜像名称&gt;<br>然后可以停止容器删除容器，把新镜像生成容器并运行。</p>
+<h3 id="下面附上一些常见需要用到的命令："><a href="#下面附上一些常见需要用到的命令：" class="headerlink" title="下面附上一些常见需要用到的命令："></a>下面附上一些常见需要用到的命令：</h3><p>新建data文件夹mkdir data<br>重启容器docker restart &lt;容器名&gt;<br>查看pull下来的镜像docker image<br>查看全部容器docker ps -a<br>删除某个容器docker rm &lt;容器id&gt;  （或docker rm &lt;容器名称&gt;）<br>停止所有的容器docker stop $(docker ps -aq)<br>删除所有停止的容器docker rm $(docker ps -aq)<br>删除所有镜像docker rmi $(docker images -q)<br>删除某个镜像docker rmi &lt;镜像名称&gt;<br>删除所有未打aaaa标签的镜像docker rmi $(docker images -q -f aaaa=true)<br>杀死所有正在运行的容器docker kill $(docker ps -a -q)</p>
+<h4 id="目录挂载："><a href="#目录挂载：" class="headerlink" title="目录挂载："></a>目录挂载：</h4><p>docker run -it -v &lt;宿主机目录&gt;:&lt;容器目录&gt; &lt;镜像名&gt; &lt;命令&gt;<br>（或者）<br>docker run -it –mount type=bind,source=&lt;宿主目录&gt;,target=&lt;容器目录&gt; &lt;镜像名&gt; &lt;命令&gt;<br><strong>区别</strong>： -v 参数可以,挂载多个主机目录<br><strong>例如</strong>：docker run -it -P –name N1 -v /home/amor/Documents/:/opt/web_doc -v /home/amor/Downloads/:/opt/web_down image-server /bin/bash<br>容器中输入命令df -h可以查看硬盘的使用情况，看出docker的路径与主机上的路径的位置关系。</p>
+<h4 id="用docker-export-import备份运行中的容器为压缩文件，和从备份文件恢复镜像："><a href="#用docker-export-import备份运行中的容器为压缩文件，和从备份文件恢复镜像：" class="headerlink" title="用docker export/import备份运行中的容器为压缩文件，和从备份文件恢复镜像："></a>用docker export/import备份运行中的容器为压缩文件，和从备份文件恢复镜像：</h4><p>docker export 导出容器为压缩文件（压缩文件位置是/storage，用ls命令可以看到）<br><strong>命令格式如下:docker export -o “path for generated tar file” “container name”</strong><br>例如：<strong>docker export -o nginx.tar nginx-test</strong>把一个运行的容器(nginx-test)导出为nginx.tar文件<br>docker import 把导出的文件系统导入为镜像并重命名<br>例如：<strong>docker import alpine.tar myalpine</strong>把刚导出的容器文件alpine.tar系统创建为镜像,并命名为myalpine</p>
+<h4 id="修改容器的挂载目录"><a href="#修改容器的挂载目录" class="headerlink" title="修改容器的挂载目录"></a>修改容器的挂载目录</h4><p>方法1：提交现有容器为新镜像，然后重新运行（$PWD表示当前目录）<br>docker commit &lt;容器ID&gt; &lt;新镜像名&gt;<br>docker run -ti -v “$PWD/dir1”:/dir1 -v “$PWD/dir2”:/dir2 &lt;新镜像名&gt; /bin/bash<br>然后停止旧容器，并使用新容器，如果由于某种原因需要新容器使用旧名称，请在删除旧容器后使用docker rename<br>方法2：export容器为镜像，然后import为新镜像<br>docker container export -o &lt;tar文件名&gt; 容器ID<br>docker import &lt;tar文件名&gt; &lt;新镜像名&gt;<br>docker run -ti -v “$PWD/dir1”:/dir1 -v “$PWD/dir2”:/dir2 newimagename /bin/bash<br>然后停止旧容器，并使用新容器，如果由于某种原因需要新容器使用旧名称，请在删除旧容器后使用docker rename</p>
+<h4 id="上传软件到容器中"><a href="#上传软件到容器中" class="headerlink" title="上传软件到容器中"></a>上传软件到容器中</h4><p><strong>docker cp  xxx.tar  mycentos:/root/</strong><br>####在容器中安装软件(还没尝试)</p>
+<h4 id="将交互式的容器提交为一个新的镜像"><a href="#将交互式的容器提交为一个新的镜像" class="headerlink" title="将交互式的容器提交为一个新的镜像"></a>将交互式的容器提交为一个新的镜像</h4><p>docker commit &lt;容器ID&gt; &lt;新镜像名称&gt;<br>然后可以停止容器删除容器，把新镜像生成容器并运行。</p>
 
       
 
@@ -442,7 +443,7 @@ daovoice('update');
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#准备：N1、CoreELEC-PhiComm-N1-arm-9-0-3-img包、CoreELEC-Phicomm-N1-arm-9-2-1-tar升级文件、N1-ADBU盘启动（傻瓜包）-zip和N1刷机脚本-7z两个刷机脚本、USB-Image-Tool软件，还有其它一些小插件，网上可以搜到。（当然，大多数工具我会放在我的云盘里，自己在我的主页左下角找）。"><span class="toc-number">1.</span> <span class="toc-text">准备：N1、CoreELEC-PhiComm_N1.arm-9.0.3.img包、CoreELEC-Phicomm-N1.arm-9.2.1.tar升级文件、N1-ADBU盘启动（傻瓜包）.zip和N1刷机脚本.7z两个刷机脚本、USB Image Tool软件，还有其它一些小插件，网上可以搜到。（当然，大多数工具我会放在我的云盘里，自己在我的主页左下角找）。</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#参数说明："><span class="toc-number">1.1.</span> <span class="toc-text">参数说明：</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#准备：N1、CoreELEC-PhiComm-N1-arm-9-0-3-img包、CoreELEC-Phicomm-N1-arm-9-2-1-tar升级文件、N1-ADBU盘启动（傻瓜包）-zip和N1刷机脚本-7z两个刷机脚本、USB-Image-Tool软件，还有其它一些小插件，网上可以搜到。（当然，大多数工具我会放在我的云盘里，自己在我的主页左下角找）。"><span class="toc-number">1.</span> <span class="toc-text">准备：N1、CoreELEC-PhiComm_N1.arm-9.0.3.img包、CoreELEC-Phicomm-N1.arm-9.2.1.tar升级文件、N1-ADBU盘启动（傻瓜包）.zip和N1刷机脚本.7z两个刷机脚本、USB Image Tool软件，还有其它一些小插件，网上可以搜到。（当然，大多数工具我会放在我的云盘里，自己在我的主页左下角找）。</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#参数说明："><span class="toc-number">1.1.</span> <span class="toc-text">参数说明：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下面附上一些常见需要用到的命令："><span class="toc-number"></span> <span class="toc-text">下面附上一些常见需要用到的命令：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#目录挂载："><span class="toc-number">1.</span> <span class="toc-text">目录挂载：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用docker-export-import备份运行中的容器为压缩文件，和从备份文件恢复镜像："><span class="toc-number">2.</span> <span class="toc-text">用docker export&#x2F;import备份运行中的容器为压缩文件，和从备份文件恢复镜像：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改容器的挂载目录"><span class="toc-number">3.</span> <span class="toc-text">修改容器的挂载目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#上传软件到容器中"><span class="toc-number">4.</span> <span class="toc-text">上传软件到容器中</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#将交互式的容器提交为一个新的镜像"><span class="toc-number">5.</span> <span class="toc-text">将交互式的容器提交为一个新的镜像</span></a></li></ol>
                     </div>
                 </span>
             </div>
