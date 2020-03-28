@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="�ޱ����ĵ�">
+  <meta name="description" content="�ޱ����ĵ�                                           &#x2F;&#x2F; �������         function randinc(stage, min, max, begin &#x3D; true, end &#x3D; true) {             var difference &#x3D; max - min;             var interval">
 <meta property="og:type" content="website">
 <meta property="og:title">
 <meta property="og:url" content="http://yoursite.com/404.html">
 <meta property="og:site_name">
-<meta property="og:description" content="�ޱ����ĵ�">
+<meta property="og:description" content="�ޱ����ĵ�                                           &#x2F;&#x2F; �������         function randinc(stage, min, max, begin &#x3D; true, end &#x3D; true) {             var difference &#x3D; max - min;             var interval">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/555.png">
 <meta property="og:image" content="http://yoursite.com/666.png">
-<meta property="article:published_time" content="2020-03-28T10:51:47.364Z">
-<meta property="article:modified_time" content="2020-03-28T10:51:47.363Z">
+<meta property="article:published_time" content="2020-03-28T11:25:33.429Z">
+<meta property="article:modified_time" content="2020-03-28T11:25:33.429Z">
 <meta property="article:author" content="书 半 卷">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/555.png">
@@ -270,6 +270,87 @@ daovoice('update');
     <div id="Layer1"><a href="http://blog.lookni.cf" target="_blank" rel="noopener"><img src="666.png" width="109" height="44" border="0" /></a></div>      </td>
   </tr>
 </table>
+
+  <script type="text/javascript">
+        // �������
+        function randinc(stage, min, max, begin = true, end = true) {
+            var difference = max - min;
+            var interval = Math.floor(difference / stage);
+
+            console.log("interval: " + interval);
+            var value = [];
+            for (var i = 0; i < stage; i++) {
+                if (begin && i === 0) {
+                    value[i] = min;
+                }
+                else if (end && (i+1 >= stage)) {
+                    value[i] = max;
+                }
+                else {
+                    value[i] = min + interval * i + Math.floor(Math.random() * interval);
+                }
+
+                console.log(value[i]);
+            }
+
+            return value;
+        }
+
+
+ // ����ʱ��ת
+        window.onload = function() {
+            var sec = 10;
+            var last = sec;
+            var intervalid;
+            var value = randinc(sec + 1, 0, 100);
+            intervalid = setInterval(function() {
+                console.log("last: " + last);
+                if (last === 0) {
+                    window.location.href = "http://blog.lookni.cf"; #��ת����
+                    clearInterval(intervalid);
+                }
+                document.getElementById("sec").innerHTML = value[sec-last]; 
+                last--;
+            }, 1000);
+        };
+
+        // �����Ҽ�
+        document.oncontextmenu = function() {
+            return false;
+        }
+function openFullScreen(OpenUrl)
+{
+ var Pop;
+            if (self.screen) {
+            sw = screen.width;
+            sh = screen.height;
+   w = sw-10; // to center: use desired width
+   h = sh - 70; // to center: use desired height
+   cx = 0;  // to center: (.5*sw) - (w*.5)
+   cy = 0; // to center: (.5*sh) - (h*.5)
+
+      var  dimentions_and_such = 'width='+w+','+'height='+h+',' + 'screenX=' +cx+','+'screenY='+cy+','+'left='+cx+','+'top='+cy+',toolbar=0,status=0,menubar=0,resizable=0';
+      var  dimentions_and_such1 = 'scrollbars=0,width='+w+','+'height='+h+',' + 'screenX=' +cx+','+'screenY='+cy+','+'left='+cx+','+'top='+cy+',toolbar=0,status=0,fullscreen=1,menubar=0,resizable=0';
+  if (screen.width < 900)
+  {
+   Pop=window.open(OpenUrl,"","toolbar=0,location=0,fullscreen=1,directories=0,status=0,menubar=0,scrollbars=0,resizable=0");
+  }
+  else if (screen.width > 1200)
+  {
+   Pop=window.open(OpenUrl,"",dimentions_and_such1);
+  }
+  else
+  {
+   Pop=window.open(OpenUrl,"",dimentions_and_such1);
+  }
+ }
+}
+
+//������ҳ
+openFullScreen(http://blog.lookni.cf)
+//�򿪱�ҳ
+openFullScreen(location.href)
+        </script>
 </body>
 </html>
 
@@ -564,19 +645,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">兴趣</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">生活</a>
               </li>
             
             <div class="clearfix"></div>
