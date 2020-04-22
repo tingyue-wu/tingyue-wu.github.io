@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>传统语文学习方法之长 | </title>
+  <title>coreelec docker openwrt 旁路由不能联网补充 | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="世人皆说今胜古，江山代有才人才。但是传统的东西有时候也是有着很好的效果的，甚至它所蕴涵的道理，不是今人能够不做深究就粗暴推翻的。今天就来说说，传统语文学习方法是的简单而有效。">
+  <meta name="description" content="&amp;emsp;&amp;emsp;之前用了一个月的旁路由，设置按照教程做的，主路由网关、dns填n1旁路由的ip，ni旁路由的网关和dns填主路由ip主路由负责dhcp广播，n1旁路由关闭dhcp。一直用的好好的。&amp;emsp;&amp;emsp;结果今天重刷了coreelec9.2.2版本，然后docker拉取op镜像布置容器，一模一样的设置，怎么也上不了网，换了其它的几个op镜像都不行。真是要崩溃了。&amp;emsp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="传统语文学习方法之长">
-<meta property="og:url" content="http://yoursite.com/2020/03/31/ctywxx/index.html">
+<meta property="og:title" content="coreelec docker openwrt 旁路由不能联网补充">
+<meta property="og:url" content="http://yoursite.com/2020/04/22/pangluyou2/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="世人皆说今胜古，江山代有才人才。但是传统的东西有时候也是有着很好的效果的，甚至它所蕴涵的道理，不是今人能够不做深究就粗暴推翻的。今天就来说说，传统语文学习方法是的简单而有效。">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;之前用了一个月的旁路由，设置按照教程做的，主路由网关、dns填n1旁路由的ip，ni旁路由的网关和dns填主路由ip主路由负责dhcp广播，n1旁路由关闭dhcp。一直用的好好的。&amp;emsp;&amp;emsp;结果今天重刷了coreelec9.2.2版本，然后docker拉取op镜像布置容器，一模一样的设置，怎么也上不了网，换了其它的几个op镜像都不行。真是要崩溃了。&amp;emsp;">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-03-31T06:05:27.000Z">
-<meta property="article:modified_time" content="2020-03-31T06:47:48.178Z">
+<meta property="article:published_time" content="2020-04-22T10:34:46.000Z">
+<meta property="article:modified_time" content="2020-04-22T12:14:38.503Z">
 <meta property="article:author" content="书 半 卷">
-<meta property="article:tag" content="工作">
+<meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="" type="application/atom+xml">
@@ -228,20 +228,20 @@ daovoice('update');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ctywxx" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-pangluyou2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      传统语文学习方法之长
+      coreelec docker openwrt 旁路由不能联网补充
     </h1>
   
 
         
-        <a href="/2020/03/31/ctywxx/" class="archive-article-date">
-  	<time datetime="2020-03-31T06:05:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-31</time>
+        <a href="/2020/04/22/pangluyou2/" class="archive-article-date">
+  	<time datetime="2020-04-22T10:34:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
 </a>
         
             <div style="margin-top:10px;">
@@ -249,7 +249,7 @@ daovoice('update');
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">3k字</span>
+        <span class="post-count">1.3k字</span>
       </span>
     </span>
 
@@ -258,7 +258,7 @@ daovoice('update');
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">9分</span>
+        <span class="post-count">5分</span>
       </span>
     </span>
 </div>
@@ -268,19 +268,26 @@ daovoice('update');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong><em>世人皆说今胜古，江山代有才人才。但是传统的东西有时候也是有着很好的效果的，甚至它所蕴涵的道理，不是今人能够不做深究就粗暴推翻的。今天就来说说，传统语文学习方法是的简单而有效。</em></strong></p>
+        <p>&emsp;&emsp;之前用了一个月的旁路由，设置按照<a href="https://leeyr.com/326.html#comment-880" target="_blank" rel="noopener">教程</a>做的，主路由网关、dns填n1旁路由的ip，ni旁路由的网关和dns填主路由ip<br>主路由负责dhcp广播，n1旁路由关闭dhcp。一直用的好好的。<br>&emsp;&emsp;结果今天重刷了coreelec9.2.2版本，然后docker拉取op镜像布置容器，一模一样的设置，怎么也上不了网，换了其它的几个op镜像都不行。真是要崩溃了。<br>&emsp;&emsp;具体表现为：docker的op中ping外网ok，就是主路由网关填写了容器中的op的ip之后，局域网的客户端全都不能上网。<br> 不明白，op自己能联网，怎么下属的客户端电脑就不能联网呢？</p>
 <a id="more"></a>
-<h1 id="传统语文学习方法是简单而有效的，概括起来六个字：熟读，精思，博览。"><a href="#传统语文学习方法是简单而有效的，概括起来六个字：熟读，精思，博览。" class="headerlink" title="传统语文学习方法是简单而有效的，概括起来六个字：熟读，精思，博览。"></a>传统语文学习方法是简单而有效的，概括起来六个字：<strong>熟读，精思，博览。</strong></h1><h2 id="熟读——表达了三层意思：一是认真读；二是朗读；三是熟读成诵。"><a href="#熟读——表达了三层意思：一是认真读；二是朗读；三是熟读成诵。" class="headerlink" title="熟读——表达了三层意思：一是认真读；二是朗读；三是熟读成诵。"></a>熟读——表达了三层意思：一是<strong>认真读</strong>；二是<strong>朗读</strong>；三是<strong>熟读成诵</strong>。</h2><h3 id="认真读。"><a href="#认真读。" class="headerlink" title="认真读。"></a><strong>认真读</strong>。</h3><p>&emsp;&emsp;清代学者崔学古曾提出读书的要求是：“<code>毋增，毋减，毋复，毋高，毋低，毋疾；毋迟。</code>”宋代朱熹不仅强调要读得准确，还强调读的遍数要多，不能走马观花地读，他说：“<code>凡读书……须读得字字响亮。不可误一字，不可少一字，不可多一字，不可倒一字。不可牵强暗记。只是要多诵遍数，自然上口，久远不忘。</code>”这样读书，古人明显强于今人。今天的课堂，屡见不鲜的是：课文已经学完，学生却没有认真地读过几遍，有的连基本的字词都不理解，甚至连读通顺都达不到。这样的前提下，语文教师在内容理解和人文涵义上的强行教学无非是沙上筑塔。</p>
-<h3 id="朗读。"><a href="#朗读。" class="headerlink" title="朗读。"></a><strong>朗读</strong>。</h3><p>&emsp;&emsp;朗读，就是琅琅上口地读、细细地读，熟读。经验证明：有的文章读一遍两遍不懂，读三遍四遍就懂了；有的文章读了前面不懂，读到后面就懂了；有的文章昨天读不懂，过些日子就读懂了。这便是古人说的“<code>书读百遍，其义自见</code>”、“<code>旧书不厌百回读，熟读精思子自知</code>”。从吸收和运用的角度来说，那些感情充盈的文章经过细读、熟读，琅琅上口，使“<code>其言皆若出于吾之口，使其意皆若出于吾之心</code>”（朱熹语），这时，文章那些词汇、句式以及表达方式等就储备到自己的语言仓库里，再经过吸收，到运用的时候，就拿得出来，拿出来就合用。从读的感情色彩来说，抑扬顿挫、错落有致地朗读，能让读者和作者达到共情、达成心通。清华大学附中教师韩军特别欣赏古人读书的方法，他强调“<code>无字不能读</code>”，他读课程表、座次表、元素表，也读得抑扬顿挫、铿镪有声。当然，朗读，并不是在一个平面上简单机械地重复读，而是每读一次，都应有不同的目的和要求。如，初读，要读准确读通顺；细读，要理解内容，读出感情；精读，要抓住重点句段细加品味，感悟入情；熟读，则要积累语言，以至背诵。</p>
-<h3 id="背诵。"><a href="#背诵。" class="headerlink" title="背诵。"></a><strong>背诵</strong>。</h3><p>&emsp;&emsp;我们常常可以看到老一辈做学问的人随口引经据典，如数家珍。说破了其实也没有什么，就是因为在他们记忆力旺盛的时候，下过一番多读、熟读的功夫。当前的学生在说话、写作中词汇贫乏、用词不当、文气不顺、语句不通，看上去好象是语法修辞的问题，实际上主要是读得太少，肚子里没有储备下足够的东西。只有通过多读、熟读，胸藏万壑，下笔才能辞直义畅，奔驰放达</p>
-<p>&emsp;&emsp;我国的传统语文学习方式证明：强化“死记硬背”的训练，是语文学习走向成功的先决条件。古代科举考试，考生要想“金榜题名”，必须将《论语》、《孟子》、《书经》、《礼仪》、《左传》等40多万字的书，全部精读背熟，此外还要看原文几倍数量的注释以及其他非读不可的经典、史书、文学书籍等。当然，人的记忆力是有明显年龄界限的，清人陆世仪在《论小学》中说：“<code>凡人有记性、有悟性。自十五以前，物欲未染，知识未开，则多记性，少悟性；自十五以后，知识既开，则多悟性，少记性……</code>”“<code>故人凡有所当读书，皆当十五以前，使之熟读……若年稍长，不惟不肯诵读，且不能诵读矣。</code>”陆世仪所说的“十五以前”，约等于现在的小学和初中。在这个阶段，机械记忆力最强，是一个人一生中记忆的黄金时期。这个时期记住的东西，终生难忘。所以古人对于像《四书》、《五经》这样的内容在“十五岁”以前并不要求理解，甚至连注解都不要求读，只要求熟读背诵。对于《三子经》、《百家姓》、《千字文》等蒙学读物也要熟读背诵，不要求过深的理解，除了作对联之外，也不进行写作方面的训练。古人这么做的主要原因是要充分利用儿童机械记忆力强的特点，尽可能多的让他们储备信息，至于理解可放到以后再说，就如牛儿吃草，先吞下去，然后再慢慢反刍。美学专家朱光潜总结自己的学习经历时强调：“<code>私塾的读书程序实现背诵后讲解，在‘开讲’时我能了解的很少，可是熟读成诵，一句一句地在舌头上滚下来，在儿童时却是一种乐事，……我现在所记的书大多都是儿时背诵过的，当时虽不甚了了，现在回忆起来，不断地有新领悟，其中的意味都是深长的。</code>”北京大学钱理群教授也对传统语文教学的“背功”大加赞赏，曾说过一段发人深省的话：“<code>我们传统的启蒙教育，发蒙时老师不做任何解释，就让学生大声朗读经文，在抑扬顿挫中，就自然领悟了经文中某些无须言说的神韵，然后一遍一遍地背诵，把传统文化中的一些基本概念，像钉子一样地楔入学童几乎空白的脑子里，实际上就已经潜移默化地融入了读书人的心灵深处，然后教师再稍作解释，要言不烦地点拨，就自然‘懂’了。即使暂时不懂，已经牢记在心，随着年龄的增长，有了一定的阅历，是会不解自通的。</code>”等到了“十五岁”以后，学生有了相当的储存，理解能力也有了相当的发展，这个阶段就可以逐渐进行研究了，背诵也更多地是在理解的基础上的背诵。</p>
-<h2 id="精思。即不但要熟读，还要精思，这是传统语文学习的又一条经验。"><a href="#精思。即不但要熟读，还要精思，这是传统语文学习的又一条经验。" class="headerlink" title="精思。即不但要熟读，还要精思，这是传统语文学习的又一条经验。"></a><strong>精思</strong>。即不但要熟读，还要精思，这是传统语文学习的又一条经验。</h2><p>&emsp;&emsp;崔学古曾经说过：“<code>得趣全在涵泳。</code>”读书不“涵泳”就不能“得趣”。涵泳是什么？就是揣摩、玩味，也就是“精思”。朱熹有著名的“<code>口到、眼到、心到</code>”论，其中的“心到”，就是强调的读书要多思考。比如，他说：“<code>读书须是仔细。逐句逐字，要见着落。若用工粗，不务精思，只道无可疑处。非无可疑，理会未到，不知有疑尔。</code>”</p>
-<p>&emsp;&emsp;对此，我国现代语文教育家叶圣陶先生也指出：“<code>……阅读方法不仅是机械地解释字义，记诵文句，研究文法修辞的法则，最要紧的还是在多比较、多归纳、多揣摩、多体会，一字一语都不轻轻放过，务必发现它的特性。惟有这样阅读，才能够发掘文章的蕴蓄。没有一点含糊。也惟有这样阅读，才能够养成用字造语的好习惯，下笔不致于有误失。</code>”（引自《国文教学的两个基本观点》，见《叶圣陶语文教育论集》第59页）“<code>读过一节停一停，回转去想一下这一节说的什么，这是个好办法。读过两节三节，又把两节三节联起来回想一下。这个办法可以使自己经常清楚，并且容易记住。……读一遍未必能够，而且大多是不够的，于是读第二遍第三遍。读过几遍之后，若还有若干地方不明白不了解，就得做翻查参考的功夫……</code>”。（引自《中学国文学习法》，见《叶圣陶语文教育论集》第124页）</p>
-<h3 id="读书要“精思”的好处："><a href="#读书要“精思”的好处：" class="headerlink" title="读书要“精思”的好处："></a>读书要“精思”的好处：</h3><p>&emsp;&emsp;首先，精思使读书真正有知识的收获。孔子说：“<code>学而不思则罔，思而不学则殆</code>”。其次，精思可以使读书者获得读书的本领和技巧。在精思的过程中逐渐养成揣摩和玩味文字的习惯。第三，精思可以锻炼人的毅力和耐心。</p>
-<h2 id="博览。"><a href="#博览。" class="headerlink" title="博览。"></a><strong>博览</strong>。</h2><p>&emsp;&emsp;博览就是广泛阅读。明末清初的语文教育家唐彪说：“<code>从古未有只读四书一经之贤士，亦未有只读四书一经之名臣。故欲知天下之事理，识古今之典故，欲作经世名文，欲为国家建大功业，则诸子中有不可不阅之书，诸语录中有不可不阅之书，典制志记中有不可不阅之书，九流杂技中有不可不阅之书。</code>”所以，“<code>学者读文，不可专趋一体，必情浓虚实、长短奇平并取</code>”（唐彪语），读书要博览不同内容和多样体裁的作品。</p>
-<p>&emsp;&emsp;应该说，语文学习中，“博览”是有效之法。古往今来，凡堪称文学大家的，无一不是善于博览之人。例如，有人向欧阳修请教如何写好文章的问题，他说：“<code>无它术，惟勤读书而多为之，自工。</code>”鲁迅先生在一封书信中也说：“<code>文章应该怎么做，我说不出来，因为自己的作文，是由于多看和练习，此外并无心得或方法。</code>”多读、多看就是“博览”。所以，我们今天的语文学习还是要继承和发展这一传统学习方法。</p>
-<h3 id="在当前的背景下，应该怎样汲取“博览”的经验？我认为要把握好两个层次。"><a href="#在当前的背景下，应该怎样汲取“博览”的经验？我认为要把握好两个层次。" class="headerlink" title="在当前的背景下，应该怎样汲取“博览”的经验？我认为要把握好两个层次。"></a>在当前的背景下，应该怎样汲取“博览”的经验？我认为要把握好两个层次。</h3><p>&emsp;&emsp;首先，把握好精读层次。即在“课标”指导下的教材选文，是编者精心选择的经典之作，是学生语感能力形成发展的宝贵资源和凭借，作为学生一定要多读多诵，要“读得字字响亮。不可误一字，不可少一字，不可多一字，不可倒一字。”对于其中的精读课文，要求每篇都“使之熟读”，最好每篇都要背诵。这是语感形成的必由之路。在此基础上，我们才有资格谈理解感悟。</p>
-<p>&emsp;&emsp;其次，把握好广泛阅读的层次。吕叔湘先生说过：“<code>回忆自己的学习过程，得之于老师课堂上讲的占多少，得之于课外阅读的占多少。我想自己大概是三七开吧，也就是说，百分之七十是得之于课外阅读。</code>”可见，课外阅读“博览”的重要。当然，怎样才能保证课外阅读的持久有效性？我认为，首先要有读的行动，读起来了，慢慢才能品尝课外阅读的乐趣，进而养成课外阅读的兴趣和习惯。对于学校教师指定的阅读篇目，一定要边读边交流，读了一阵子，就和同伴交流学习体会；其次，读书有些想法，就要动笔写一写，不要强调字数，随意挥洒，但是应该保存好，时常翻翻，自我勉励促进。</p>
+<p>&emsp;&emsp;辗转几天，找到了写教程的“黎记”兄弟，在他的帮助指导下开始新的尝试。以下是详细记录。</p>
+<h3 id="emsp-emsp-1、删除原来的镜像、容器、macvlan网络，一切先还原到最初。"><a href="#emsp-emsp-1、删除原来的镜像、容器、macvlan网络，一切先还原到最初。" class="headerlink" title="&emsp;&emsp;1、删除原来的镜像、容器、macvlan网络，一切先还原到最初。"></a>&emsp;&emsp;1、删除原来的镜像、容器、macvlan网络，一切先还原到最初。</h3><h3 id="emsp-emsp-2、重新创建macvlan网络，这次不用macnet名称，换了macvlan-lan（名称无所谓，就是方便识别），并且不开启网卡混杂模式"><a href="#emsp-emsp-2、重新创建macvlan网络，这次不用macnet名称，换了macvlan-lan（名称无所谓，就是方便识别），并且不开启网卡混杂模式" class="headerlink" title="&emsp;&emsp;2、重新创建macvlan网络，这次不用macnet名称，换了macvlan_lan（名称无所谓，就是方便识别），并且不开启网卡混杂模式"></a>&emsp;&emsp;2、重新创建macvlan网络，这次不用macnet名称，换了macvlan_lan（名称无所谓，就是方便识别），并且不开启网卡混杂模式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker network create -d macvlan --subnet&#x3D;192.168.10.0&#x2F;24 --gateway&#x3D;192.168.10.1 -o parent&#x3D;eth0 macvlan_lan</span><br><span class="line">命令表示创建名称为macvlan_lan类型为macvlan网关为192.168.10.1子网络网段是192.168.10.0&#x2F;24的一个docker网络。</span><br></pre></td></tr></table></figure>
+<h3 id="emsp-emsp-3、创建op容器，黎记指出需要加入指定ip的命令"><a href="#emsp-emsp-3、创建op容器，黎记指出需要加入指定ip的命令" class="headerlink" title="&emsp;&emsp;3、创建op容器，黎记指出需要加入指定ip的命令"></a>&emsp;&emsp;3、创建op容器，黎记指出需要加入指定ip的命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run --name op --restart always -d --network macvlan_lan --privileged --ip 192.168.10.20 unifreq&#x2F;openwrt-aarch64:latest  &#x2F;sbin&#x2F;init</span><br><span class="line">命令表示创建名称为op的容器，--restart always自动随docker启动而重启，-d在后台运行，指定继承docker的名称为macvlan_lan的网络，--privileged提升权限，指定op的访问ip是192.168.10.20，容器来自镜像unifreq&#x2F;openwrt-aarch64:latest</span><br></pre></td></tr></table></figure>
+<p>结果出现一个错误提示：<code>docker:Errorr esponse.from da emon:No command speci fied.</code><br>于是分开执行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">    --name&#x3D;OpenWrt \</span><br><span class="line">    --restart always \</span><br><span class="line">    --privileged \</span><br><span class="line">    --network macvlan_lan \</span><br><span class="line">    --ip 192.168.10.20 \</span><br><span class="line">    unifreq&#x2F;openwrt-aarch64:latest</span><br></pre></td></tr></table></figure>
+<p>这次没有报错。<br>但是我知道，很多时候指定ip并不是必须的，后面才会越来越重要。</p>
+<h3 id="emsp-emsp-4、进OpenWrt字符界面修改ip参数"><a href="#emsp-emsp-4、进OpenWrt字符界面修改ip参数" class="headerlink" title="&emsp;&emsp;4、进OpenWrt字符界面修改ip参数"></a>&emsp;&emsp;4、进OpenWrt字符界面修改ip参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it OpenWrt bash</span><br><span class="line"></span><br><span class="line">vi &#x2F;etc&#x2F;config&#x2F;network</span><br><span class="line">按下 i</span><br><span class="line">——建议 proto 使用 static（静态ip） 而不使用 dhcp。</span><br><span class="line">config interface &#39;lan&#39;</span><br><span class="line">        option type &#39;bridge&#39;</span><br><span class="line">        option ifname &#39;eth0&#39;</span><br><span class="line">        option proto &#39;static&#39;</span><br><span class="line">        option ipaddr &#39;192.168.10.20&#39;</span><br><span class="line">        option netmask &#39;255.255.255.0&#39;</span><br><span class="line">        option gateway &#39;192.168.10.1&#39;</span><br><span class="line">        option ip6assign &#39;60&#39;</span><br><span class="line">——退出保存</span><br><span class="line">esc -&gt; :wq</span><br><span class="line">——重启网络</span><br><span class="line">&#x2F;etc&#x2F;init.d&#x2F;network restart</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;此刻，做到这一步，其实和之前的很多次创建容器差别不大，解决问题的关键并不在这里，所以心里并没有什么期待。<br>但是我知道接下来，重点快来了。</p>
+<h3 id="emsp-emsp-5、在容器内直接ping检查是否有问题，进行修正"><a href="#emsp-emsp-5、在容器内直接ping检查是否有问题，进行修正" class="headerlink" title="&emsp;&emsp;5、在容器内直接ping检查是否有问题，进行修正"></a>&emsp;&emsp;5、在容器内直接ping检查是否有问题，进行修正</h3><p>&emsp;&emsp;ping 192.168.10.1和ping 223.6.6.6检查是否连上主路由网关和外网<br>结果显示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">bash-4. 4# ping 192. 168.10. 1</span><br><span class="line">PING 192.168.10.1 (192. 168.10.1): 56 data bytes</span><br><span class="line">64 bytes from 192. 168. 10. 1: seq&#x3D;0 tt1&#x3D;64 time&#x3D;3. 693 ms</span><br><span class="line">64 bytes from 192. 168. 10. 1: seq&#x3D;1 tt1&#x3D;64 time&#x3D;1.022 ms </span><br><span class="line">64 bytes from 192. 168. 10. 1: seq&#x3D;2 tt1&#x3D;64 time&#x3D;0.941 ms </span><br><span class="line">64 bytes from 192. 168. 10. 1: seq&#x3D;3 tt1&#x3D;64 time&#x3D;1. 248 ms</span><br><span class="line"> ---192. 168. 10. 1 ping statistics ---</span><br><span class="line"></span><br><span class="line">bash-4. 4# ping 223. 6. 6.6</span><br><span class="line">PING 223.6.6.6 (223.6. 6.6): 56 data bytes </span><br><span class="line">ping: sendto: Network unreachable</span><br></pre></td></tr></table></figure>
+<p>显然能连上网关但是连不上外网。<br>exit命令退出容器回到coreelec，输入 route -n查看了路由表参数<br>又输入 ifconfig查看了网卡配置尤其是eth0的参数。<br>然后输入命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">route add default gw 192.168.10.1</span><br></pre></td></tr></table></figure>
+<p>修正了静态路由默认网关，这样以后ping 223.6.6.6也通了。</p>
+<h3 id="emsp-emsp-6、重启N1，再次ping-223-6-6-6也没问题。这时候本以为“一切回到正轨了“，"><a href="#emsp-emsp-6、重启N1，再次ping-223-6-6-6也没问题。这时候本以为“一切回到正轨了“，" class="headerlink" title="&emsp;&emsp;6、重启N1，再次ping 223.6.6.6也没问题。这时候本以为“一切回到正轨了“，"></a>&emsp;&emsp;6、重启N1，再次ping 223.6.6.6也没问题。这时候本以为“一切回到正轨了“，</h3><p>&emsp;&emsp;后面就是主副路由互指对方ip为自己的网关和dns，保存并应用。<br>以及添加防火墙转发命令iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE<br>重启防火墙。</p>
+<p>为了减少麻烦，我没有先互指网关，而是把客户端电脑网关设置为docker旁路由的ip测试。<br>结果是<br>客户端电脑依然打不开网页。why？</p>
+<h3 id="emsp-emsp-7、一夜过后，”黎记“兄弟发来留言：有办法解决了。"><a href="#emsp-emsp-7、一夜过后，”黎记“兄弟发来留言：有办法解决了。" class="headerlink" title="&emsp;&emsp;7、一夜过后，”黎记“兄弟发来留言：有办法解决了。"></a>&emsp;&emsp;7、一夜过后，”黎记“兄弟发来留言：有办法解决了。</h3><p>&emsp;&emsp;docker内op<code>网络-防火墙-基本设置：”转发“一项改成”接受“，保存并应用</code>。客户端电脑就可以上网了。<br>另外还有一个方法是永久关闭op的防火墙。<br>docker exec -it OpenWrt bash进入op字符界面，<br>shell 命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;etc&#x2F;init.d&#x2F;firewall disable &amp;&amp; &#x2F;etc&#x2F;init.d&#x2F;firewall stop     表示关闭防火墙并且重启后也不会自动打开。</span><br><span class="line">&#x2F;etc&#x2F;init.d&#x2F;network restart                                               重启网络</span><br></pre></td></tr></table></figure>
+<h3 id="emsp-emsp-虽然不知道为什么这次刷机会出现这个莫名其妙的问题，但是总算解决的。在此做个记录留给自己以后回顾，也给遇到同样问题的人一个参考。"><a href="#emsp-emsp-虽然不知道为什么这次刷机会出现这个莫名其妙的问题，但是总算解决的。在此做个记录留给自己以后回顾，也给遇到同样问题的人一个参考。" class="headerlink" title="&emsp;&emsp;虽然不知道为什么这次刷机会出现这个莫名其妙的问题，但是总算解决的。在此做个记录留给自己以后回顾，也给遇到同样问题的人一个参考。"></a>&emsp;&emsp;虽然不知道为什么这次刷机会出现这个莫名其妙的问题，但是总算解决的。在此做个记录留给自己以后回顾，也给遇到同样问题的人一个参考。</h3><p>并感谢”黎记“兄弟的无私帮助。</p>
 
       
 
@@ -334,7 +341,7 @@ daovoice('update');
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工作</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -396,7 +403,7 @@ daovoice('update');
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/03/31/ctywxx/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/04/22/pangluyou2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -410,18 +417,9 @@ daovoice('update');
   
 <nav id="article-nav">
   
-    <a href="/2020/04/17/fljslxt/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          《傅雷家书》练习题含答案2020.04.17
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/03/28/CoreELEC/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">N1刷CoreELEC+op旁路由+简易私有云媒体中心</div>
+    <a href="/2020/04/17/fljslxt/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《傅雷家书》练习题含答案2020.04.17</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -448,7 +446,7 @@ daovoice('update');
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#传统语文学习方法是简单而有效的，概括起来六个字：熟读，精思，博览。"><span class="toc-number">1.</span> <span class="toc-text">传统语文学习方法是简单而有效的，概括起来六个字：熟读，精思，博览。</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#熟读——表达了三层意思：一是认真读；二是朗读；三是熟读成诵。"><span class="toc-number">1.1.</span> <span class="toc-text">熟读——表达了三层意思：一是认真读；二是朗读；三是熟读成诵。</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#认真读。"><span class="toc-number">1.1.1.</span> <span class="toc-text">认真读。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#朗读。"><span class="toc-number">1.1.2.</span> <span class="toc-text">朗读。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#背诵。"><span class="toc-number">1.1.3.</span> <span class="toc-text">背诵。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#精思。即不但要熟读，还要精思，这是传统语文学习的又一条经验。"><span class="toc-number">1.2.</span> <span class="toc-text">精思。即不但要熟读，还要精思，这是传统语文学习的又一条经验。</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#读书要“精思”的好处："><span class="toc-number">1.2.1.</span> <span class="toc-text">读书要“精思”的好处：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博览。"><span class="toc-number">1.3.</span> <span class="toc-text">博览。</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在当前的背景下，应该怎样汲取“博览”的经验？我认为要把握好两个层次。"><span class="toc-number">1.3.1.</span> <span class="toc-text">在当前的背景下，应该怎样汲取“博览”的经验？我认为要把握好两个层次。</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#emsp-emsp-1、删除原来的镜像、容器、macvlan网络，一切先还原到最初。"><span class="toc-number">1.</span> <span class="toc-text">&amp;emsp;&amp;emsp;1、删除原来的镜像、容器、macvlan网络，一切先还原到最初。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#emsp-emsp-2、重新创建macvlan网络，这次不用macnet名称，换了macvlan-lan（名称无所谓，就是方便识别），并且不开启网卡混杂模式"><span class="toc-number">2.</span> <span class="toc-text">&amp;emsp;&amp;emsp;2、重新创建macvlan网络，这次不用macnet名称，换了macvlan_lan（名称无所谓，就是方便识别），并且不开启网卡混杂模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#emsp-emsp-3、创建op容器，黎记指出需要加入指定ip的命令"><span class="toc-number">3.</span> <span class="toc-text">&amp;emsp;&amp;emsp;3、创建op容器，黎记指出需要加入指定ip的命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#emsp-emsp-4、进OpenWrt字符界面修改ip参数"><span class="toc-number">4.</span> <span class="toc-text">&amp;emsp;&amp;emsp;4、进OpenWrt字符界面修改ip参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#emsp-emsp-5、在容器内直接ping检查是否有问题，进行修正"><span class="toc-number">5.</span> <span class="toc-text">&amp;emsp;&amp;emsp;5、在容器内直接ping检查是否有问题，进行修正</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#emsp-emsp-6、重启N1，再次ping-223-6-6-6也没问题。这时候本以为“一切回到正轨了“，"><span class="toc-number">6.</span> <span class="toc-text">&amp;emsp;&amp;emsp;6、重启N1，再次ping 223.6.6.6也没问题。这时候本以为“一切回到正轨了“，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#emsp-emsp-7、一夜过后，”黎记“兄弟发来留言：有办法解决了。"><span class="toc-number">7.</span> <span class="toc-text">&amp;emsp;&amp;emsp;7、一夜过后，”黎记“兄弟发来留言：有办法解决了。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#emsp-emsp-虽然不知道为什么这次刷机会出现这个莫名其妙的问题，但是总算解决的。在此做个记录留给自己以后回顾，也给遇到同样问题的人一个参考。"><span class="toc-number">8.</span> <span class="toc-text">&amp;emsp;&amp;emsp;虽然不知道为什么这次刷机会出现这个莫名其妙的问题，但是总算解决的。在此做个记录留给自己以后回顾，也给遇到同样问题的人一个参考。</span></a></li></ol>
                     </div>
                 </span>
             </div>
