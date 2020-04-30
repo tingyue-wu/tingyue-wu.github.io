@@ -16,7 +16,7 @@
 <meta property="og:description" content="HEXO常用命令创建一个新的文章：hexo new 文章名称创建标签页面：hexo new page tags创建分类页面：hexo new page categories">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-30T12:50:41.000Z">
-<meta property="article:modified_time" content="2020-04-30T13:12:55.433Z">
+<meta property="article:modified_time" content="2020-04-30T13:18:00.560Z">
 <meta property="article:author" content="书 半 卷">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
@@ -249,7 +249,7 @@ daovoice('update');
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">588字</span>
+        <span class="post-count">611字</span>
       </span>
     </span>
 
@@ -274,11 +274,22 @@ daovoice('update');
 <h3 id="博客双分支部署："><a href="#博客双分支部署：" class="headerlink" title="博客双分支部署："></a>博客双分支部署：</h3><p>每次写完博客要同时同步到该仓库的不同分支上，以实现真正的同步(备份)。命令如下：</p>
 <h4 id="同步到master分支"><a href="#同步到master分支" class="headerlink" title="同步到master分支"></a>同步到master分支</h4><p>hexo clean<br>hexo generate<br>hexo deploy</p>
 <h4 id="手动同步到blog分支上"><a href="#手动同步到blog分支上" class="headerlink" title="手动同步到blog分支上"></a>手动同步到blog分支上</h4><p>git add.<br>git commit -m “提交信息”<br>git push origin blog #如果设置了blog为默认分支，可以直接git push</p>
-<h3 id="Markdown语法"><a href="#Markdown语法" class="headerlink" title="Markdown语法"></a><strong>Markdown语法</strong></h3><p><strong>#主页显示文章概要</strong><br>正文插入“ <!-- more --> ”即可，主页只会显示标题和该符号之前的文字，只有点击“文章标题”或“展开全文”才可看到全文，<br>注意：需要用#注释掉文件主题配置文件 themes/yilia/_config.yml 里的：<br>excerpt_link: more  #表示显示更多内容</p>
-<p><strong>#建立文章目录</strong><br>目录文字用#表示，几个#表示几级目录，越多字越小，一般小标题用三个#号，最好加粗。<br>注意：#和文字之间要留空格才会生效，#要写在空两格、加粗、删除线等等所有符号之前才行。</p>
-<p><strong>#段落前空两格：</strong><br>“&emsp;&emsp;”</p>
-<p><strong>#字体</strong><br>加粗：文字左右分别用两个“<em>”号包起来<br>斜体：文字左右分别用一个“</em>”号包起来<br>斜体加粗：文字左右分别用三个“*”号包起来<br>删除线：文字左右分别用两个“~~”号包起来<br>引用：文字前加“&gt;”即可（整行文字前面会出现一个竖线）<br>分割线：三个或者三个以上的“ - ”或者“ * ”都可以<br>超链接：“<a href="超链接地址" title="超链接title">超链接名</a>”#title可加可不加</p>
-<p><strong>#列表</strong><br>无序列表： - + * 任何一种都可以。注意：和文字间要有空格。<br>列表嵌套：上一级和下一级之间敲三个空格即可。</p>
+<h3 id="Markdown语法"><a href="#Markdown语法" class="headerlink" title="Markdown语法"></a><strong>Markdown语法</strong></h3><p><strong>#主页显示文章概要</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">正文插入“ &lt;!-- more --&gt; ”即可，主页只会显示标题和该符号之前的文字，只有点击“文章标题”或“展开全文”才可看到全文，</span><br><span class="line">注意：需要用#注释掉文件主题配置文件 themes&#x2F;yilia&#x2F;_config.yml 里的：</span><br><span class="line">excerpt_link: more  #表示显示更多内容</span><br></pre></td></tr></table></figure>
+
+<p><strong>#建立文章目录</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">目录文字用#表示，几个#表示几级目录，越多字越小，一般小标题用三个#号，最好加粗。</span><br><span class="line">注意：#和文字之间要留空格才会生效，#要写在空两格、加粗、删除线等等所有符号之前才行。</span><br></pre></td></tr></table></figure>
+
+<p><strong>#段落前空两格：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;emsp;&amp;emsp;</span><br></pre></td></tr></table></figure>
+
+<p><strong>#字体</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">加粗：文字左右分别用两个*号包起来</span><br><span class="line">斜体：文字左右分别用一个*号包起来</span><br><span class="line">斜体加粗：文字左右分别用三个*号包起来</span><br><span class="line">删除线：文字左右分别用两个~~号包起来</span><br><span class="line">引用：文字前加“&gt;”即可（整行文字前面会出现一个竖线）</span><br><span class="line">分割线：三个或者三个以上的 - 或者 * 都可以</span><br><span class="line">超链接：[超链接名](超链接地址 &quot;超链接title&quot;)   #title可加可不加</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>#列表</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">无序列表： - + * 任何一种都可以。注意：和文字间要有空格。</span><br><span class="line">列表嵌套：上一级和下一级之间敲三个空格即可。</span><br></pre></td></tr></table></figure>
+
 <p><strong>#表格</strong><br>示例（注意表格与上下文本之间要空两行才能显示）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|姓名|技能|排行|</span><br><span class="line">|:---:|:---|:---|</span><br><span class="line">|刘备|善哭|大哥|</span><br><span class="line">|关羽|善打|二哥|</span><br><span class="line">|张飞|善骂|三弟|</span><br></pre></td></tr></table></figure>
 <p>显示效果：</p>
