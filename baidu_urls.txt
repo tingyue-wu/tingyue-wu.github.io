@@ -1,3 +1,4 @@
+http://blog.lookni.cf/2020/05/01/%E5%85%8D%E8%B0%B7%E6%AD%8C%E8%B4%A6%E5%8F%B7%E6%B3%A8%E5%86%8Cfreenom%E9%A1%B6%E7%BA%A7%E5%9F%9F%E5%90%8D/
 http://blog.lookni.cf/2020/04/30/HEXO%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8CMarkdown%E8%AF%AD%E6%B3%95/
 http://blog.lookni.cf/2020/04/30/dokker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/
 http://blog.lookni.cf/2020/04/30/%E5%90%8D%E8%91%97%E9%98%85%E8%AF%BB%E3%80%8A%E5%82%85%E9%9B%B7%E5%AE%B6%E4%B9%A6%E3%80%8B%E5%8D%B734/
@@ -25,4 +26,3 @@ http://blog.lookni.cf/2020/03/28/CoreELEC/
 http://blog.lookni.cf/2020/03/27/sjgyjqs/
 http://blog.lookni.cf/2020/03/27/jkzyys/
 http://blog.lookni.cf/2020/03/26/hello-world/
-http://blog.lookni.cf/2020/01/01/%E5%85%8D%E8%B0%B7%E6%AD%8C%E8%B4%A6%E5%8F%B7%E6%B3%A8%E5%86%8Cfreenom%E9%A1%B6%E7%BA%A7%E5%9F%9F%E5%90%8D/
