@@ -57,8 +57,11 @@
 <meta property="og:image" content="http://blog.lookni.cf/2021/04/25/j4125nas/musicplayer.png">
 <meta property="og:image" content="http://blog.lookni.cf/2021/04/25/j4125nas/musicplayer2.png">
 <meta property="og:image" content="http://blog.lookni.cf/2021/04/25/j4125nas/zdir.png">
+<meta property="og:image" content="http://blog.lookni.cf/2021/04/25/j4125nas/aria2.png">
+<meta property="og:image" content="http://blog.lookni.cf/2021/04/25/j4125nas/Qbittorrent.png">
+<meta property="og:image" content="http://blog.lookni.cf/2021/04/25/j4125nas/tr.png">
 <meta property="article:published_time" content="2021-04-25T12:40:41.000Z">
-<meta property="article:modified_time" content="2021-05-12T07:29:24.400Z">
+<meta property="article:modified_time" content="2021-05-12T07:52:11.096Z">
 <meta property="article:author" content="书 半 卷">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
@@ -292,7 +295,7 @@ daovoice('update');
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">5.1k字</span>
+        <span class="post-count">5.2k字</span>
       </span>
     </span>
 
@@ -350,38 +353,38 @@ daovoice('update');
 <p>&emsp;&emsp;5、添加用户和共享文件夹<br>Unraid系统只有root用户可以访问unRAID WebGui，Windows系统是不允许通过root用户登录远程磁盘的，所以我们既要点击root用户设置密码变得安全，还要再创建一个新用户比如admin，同样设置密码方便其它客户端访问unraid服务器的共享文件夹。</p>
 <img src="/2021/04/25/j4125nas/yonghu.png" class="" title="添加用户">
 
-<p>&emsp;&emsp;5、设置存储空间<br>点击MAIN主界面，UNRAID将存储空间分为三块，分别是校验盘、存储盘、以及缓存盘！<br>我们先在存储盘的地方，选择一个磁盘：</p>
+<p>&emsp;&emsp;6、设置存储空间<br>点击MAIN主界面，UNRAID将存储空间分为三块，分别是校验盘、存储盘、以及缓存盘！<br>我们先在存储盘的地方，选择一个磁盘：</p>
 <img src="/2021/04/25/j4125nas/cipan.png" class="" title="选磁盘">
 <p>然后点击最下面的启动，启动这个阵列：</p>
 <img src="/2021/04/25/j4125nas/qidong.png" class="" title="启动磁盘">
 <p>启动阵列后，如图，点击打勾，再点击格式化：</p>
 <img src="/2021/04/25/j4125nas/geshihua.png" class="" title="格式化磁盘">
 <p>这样，磁盘就可以存东西了。我因为用的是两块固态，所以直接把它们设置为存储盘了。上一台j3455的用的是机械盘，所以加了一块固态设置为缓存盘，用于加速。</p>
-<p>&emsp;&emsp;6、设置硬盘自启动和休眠<br>应用app（docker）是部署在硬盘的，阵列不启动，各个应用就启动不了，所以我们要将“自动启动”开起来，设置——磁盘设置，选择“启用自动启动”，至于“默认休眠延迟”，一般设置30分钟，表示硬盘30分钟没有读写就休眠，上一台用机械硬盘的NAS就是这样设置的。这一台因为是固态并且准备24小时运行的，所以就关闭了休眠，后续再根据情况是否需要更改。最后拉到页面最下面应用。</p>
+<p>&emsp;&emsp;7、设置硬盘自启动和休眠<br>应用app（docker）是部署在硬盘的，阵列不启动，各个应用就启动不了，所以我们要将“自动启动”开起来，设置——磁盘设置，选择“启用自动启动”，至于“默认休眠延迟”，一般设置30分钟，表示硬盘30分钟没有读写就休眠，上一台用机械硬盘的NAS就是这样设置的。这一台因为是固态并且准备24小时运行的，所以就关闭了休眠，后续再根据情况是否需要更改。最后拉到页面最下面应用。</p>
 <img src="/2021/04/25/j4125nas/cipanziqi.png" class="" title="磁盘自启动">
 
-<p>&emsp;&emsp;7、更改访问管理端口<br>设置——管理权限，http端口80改成24680，因为有时候80端口会被运营商屏蔽，外网不能访问，即使不屏蔽，也容易和家里其它默认80端口的设备冲突。</p>
-<p>&emsp;&emsp;8、设置共享文件夹<br>共享——添加共享，输入共享文件夹名字，比如NAS，其它默认，直接点击add share（添加共享）。</p>
+<p>&emsp;&emsp;8、更改访问管理端口<br>设置——管理权限，http端口80改成24680，因为有时候80端口会被运营商屏蔽，外网不能访问，即使不屏蔽，也容易和家里其它默认80端口的设备冲突。</p>
+<p>&emsp;&emsp;9、设置共享文件夹<br>共享——添加共享，输入共享文件夹名字，比如NAS，其它默认，直接点击add share（添加共享）。</p>
 <img src="/2021/04/25/j4125nas/gongxiang.png" class="" title="设置共享文件夹">
 <p>添加后，会弹出下面这个页面，将SMB 选项的安全改成私有，并且将admin用户改成读写状态，这个文件夹就有权限给admin用户使用了。</p>
 <img src="/2021/04/25/j4125nas/gongxiang2.png" class="" title="设置共享文件夹2">
 <p>现在可以在电脑的地址栏，输入\IP地址，访问共享文件夹了。如果出现下图无法访问错误：</p>
 <img src="/2021/04/25/j4125nas/cuwu.png" class="" title="访问错误">
 <p>要么ip输入错误，要么权限问题，我们将参考下面这个方法，启用不安全的来宾即可：<br>按window+R键打开运行→在运行中输入”gpedit msc启动本地组策略编辑器，计算机配置→管理模板→网络→Lanman工作站→启用不安全的来宾登录&gt;→已启用!<br>然后，我们就可以顺利访问NAS的磁盘了。</p>
-<p>&emsp;&emsp;9、SMB添加回收站功能<br>在应用市场搜索安装插件 Recycle Bin，设置→用户实用程序→Recycle Bin，启用插件（Enable Recycle Bin选“是”）。Age days默认7天，可以改3天。</p>
-<p>&emsp;&emsp;10、安装挂载插件Unassigned Devices<br>应用市场搜索安装插件Unassigned Devices（用途是挂载任何移动硬盘、网络硬盘）<br>安装成功后，我们就可以在“主界面”找到Unassigned Devices插件的身影。此插件支持SMB/NFS 还有可以挂ISO 分享，这里我们只需要挂NFS或者SMB。另外还有一个Unassigned Devices Plus (Addon)插件支持HFS+ and exFAT disk格式。<br>配置SMB：SMB的IP/HOST的选项要手动输入，然后输入服务器的用户名和密码，Domain（域）这一项可以不写，填写完成后点击load shares 搜索目标服务器的分享目录，选择目录之后点击ADD即可<br>配置NFS：类似smb，如果无法搜索到群晖（有时有bug）分享的目录，我们可以手写即可。</p>
+<p>&emsp;&emsp;10、SMB添加回收站功能<br>在应用市场搜索安装插件 Recycle Bin，设置→用户实用程序→Recycle Bin，启用插件（Enable Recycle Bin选“是”）。Age days默认7天，可以改3天。</p>
+<p>&emsp;&emsp;11、安装挂载插件Unassigned Devices<br>应用市场搜索安装插件Unassigned Devices（用途是挂载任何移动硬盘、网络硬盘）<br>安装成功后，我们就可以在“主界面”找到Unassigned Devices插件的身影。此插件支持SMB/NFS 还有可以挂ISO 分享，这里我们只需要挂NFS或者SMB。另外还有一个Unassigned Devices Plus (Addon)插件支持HFS+ and exFAT disk格式。<br>配置SMB：SMB的IP/HOST的选项要手动输入，然后输入服务器的用户名和密码，Domain（域）这一项可以不写，填写完成后点击load shares 搜索目标服务器的分享目录，选择目录之后点击ADD即可<br>配置NFS：类似smb，如果无法搜索到群晖（有时有bug）分享的目录，我们可以手写即可。</p>
 <img src="/2021/04/25/j4125nas/guazai1.png" class="" title="挂载网络共享文件夹1">
 <img src="/2021/04/25/j4125nas/guazai2.png" class="" title="挂载网络共享文件夹2">
 <p>注意事项：<br>挂载之后，插件的默认挂载地址为/mnt/disks 所有挂载过来的文件内容都在此。<br>部分服务器，可能会导致在搜索目标共享目录的时候不出现路径，我们手写路径即可。</p>
-<p>&emsp;&emsp;11、安装Dynamix S3 Sleep休眠插件<br>安装以后，在DASHBOARD重启标记左边就有一个休眠按钮，点一下就进入休眠。要设置的话，到Settings – Sleep Settings，Execute function:选择模式（禁用、休眠、关机），Excluded days:设置不休眠的日期，Excluded hours:设置不休眠的时钟，如果运行虚拟机或者docker的话，把wait for array inactivity勾上，不然休眠不了。休眠后需要设置路由来进行网络唤醒，主板要打开网络唤醒功能，UNRAID系统用命令查询网卡是否开启网络唤醒功能，命令是 ethtool eth0 回车。有wake-on g就代表可以执行。Dynamix S3 Sleep有Windows端和APP端，只要网络通了，设置好你的MAC地址。发送指令就可以。或者用路由进行唤醒。</p>
+<p>&emsp;&emsp;12、安装Dynamix S3 Sleep休眠插件<br>安装以后，在DASHBOARD重启标记左边就有一个休眠按钮，点一下就进入休眠。要设置的话，到Settings – Sleep Settings，Execute function:选择模式（禁用、休眠、关机），Excluded days:设置不休眠的日期，Excluded hours:设置不休眠的时钟，如果运行虚拟机或者docker的话，把wait for array inactivity勾上，不然休眠不了。休眠后需要设置路由来进行网络唤醒，主板要打开网络唤醒功能，UNRAID系统用命令查询网卡是否开启网络唤醒功能，命令是 ethtool eth0 回车。有wake-on g就代表可以执行。Dynamix S3 Sleep有Windows端和APP端，只要网络通了，设置好你的MAC地址。发送指令就可以。或者用路由进行唤醒。</p>
 <img src="/2021/04/25/j4125nas/xiumian.png" class="" title="休眠设置">
 <p>图上是“已禁用”，需要的话改成“开启”，下面是磁盘阵列多久不活动才休眠的时间设置、唤醒后网口强制千兆的设置等。<br>使用虚拟黑群的要注意，如果宿主机直接关机或者重启，黑群会被强制关机无法自动关机，原因是黑群的ACPI管理有问题，分享大佬编译的一个套件 Power button（DS3617xs 6.22 UP4可用，已经下载在盘上），要手动安装。以后关闭宿主机不用先登录群晖进行关机了。套件下载链接：ww.lanzous.com/icuyt3i</p>
-<p>&emsp;&emsp;12、安装Dynamix System Buttons插件<br>可以在主页右上角直接显示重启、关机按钮。不必每次到“仪表板”去找。</p>
+<p>&emsp;&emsp;13、安装Dynamix System Buttons插件<br>可以在主页右上角直接显示重启、关机按钮。不必每次到“仪表板”去找。</p>
 <img src="/2021/04/25/j4125nas/kuaijie.png" class="" title="快捷按钮">
 
-<p>&emsp;&emsp;13、安装CA Fix Common Problems插件<br>这个插件可以检测出，我们的配置有没有问题。</p>
-<p>&emsp;&emsp;14、安装Dynamix SSD Trim插件<br>如果用固态做缓存盘的话，需要安装这个插件，安装后，可以定期（设置几点钟，默认凌晨3点40）将SSD的资源移动到阵列里。避免缓存盘损坏丢失数据。</p>
-<p>&emsp;&emsp;15、UNRAID的备份和还原<br>备份一下U盘信息，这样就算U盘损坏，我们的UNRAID也没有问题。点击“主界面”找到Flash U盘，然后点击备份按钮。备份文件是用ZIP格式保存的，直接下载到本地电脑里。当U盘出现故障的时候，换一个U盘，用unRAID的安装工具，选择到 Local Zip，然后选择之前备份的ZIP文件，即可还原。unRAID的U盘里，只保存一些设置，至于Docker镜像和虚拟机文件，都是保存在硬盘里的。</p>
+<p>&emsp;&emsp;14、安装CA Fix Common Problems插件<br>这个插件可以检测出，我们的配置有没有问题。</p>
+<p>&emsp;&emsp;15、安装Dynamix SSD Trim插件<br>如果用固态做缓存盘的话，需要安装这个插件，安装后，可以定期（设置几点钟，默认凌晨3点40）将SSD的资源移动到阵列里。避免缓存盘损坏丢失数据。</p>
+<p>&emsp;&emsp;16、UNRAID的备份和还原<br>备份一下U盘信息，这样就算U盘损坏，我们的UNRAID也没有问题。点击“主界面”找到Flash U盘，然后点击备份按钮。备份文件是用ZIP格式保存的，直接下载到本地电脑里。当U盘出现故障的时候，换一个U盘，用unRAID的安装工具，选择到 Local Zip，然后选择之前备份的ZIP文件，即可还原。unRAID的U盘里，只保存一些设置，至于Docker镜像和虚拟机文件，都是保存在硬盘里的。</p>
 <img src="/2021/04/25/j4125nas/beifen.png" class="" title="备份启动盘">
 <img src="/2021/04/25/j4125nas/huaiyuan.png" class="" title="还原启动盘">
 
@@ -393,7 +396,7 @@ daovoice('update');
 <img src="/2021/04/25/j4125nas/zimuchaj.png" class="" title="注册字幕插件">
 <p>这样，在媒体库，点击管理媒体库，字幕下载处多了chinese，打勾确定。</p>
 <img src="/2021/04/25/j4125nas/zimuchajian.png" class="" title="设置字幕插件">
-<p>为了使每次Jellyfin数据更新都自动同步到Kodi上，官方建议安装Kodi Sync Queue插件。<br>控制台中进入“插件”菜单，选择顶部的“目录”找到它，安装后重启Jellyfin。<br>设置账号密码xxxxx，添加访客账号密码xxxx<br>安装豆瓣电影元数据插件，<a href="https://github.com/Libitum/jellyfin-plugin-douban/tree/v0.5.0下载Jellyfin.Plugin.Douban压缩包解压后放到/mnt/user/appdata/jellyfin/data/plugins路径。" target="_blank" rel="noopener">https://github.com/Libitum/jellyfin-plugin-douban/tree/v0.5.0下载Jellyfin.Plugin.Douban压缩包解压后放到/mnt/user/appdata/jellyfin/data/plugins路径。</a></p>
+<p>为了使每次Jellyfin数据更新都自动同步到Kodi上，官方建议安装Kodi Sync Queue插件。<br>控制台中进入“插件”菜单，选择顶部的“目录”找到它，安装后重启Jellyfin。<br>设置账号密码xxxxx，添加访客账号密码xxxx<br>安装豆瓣电影元数据插件，<a href="https://github.com/Libitum/jellyfin-plugin-douban/tree/v0.5.0" target="_blank" rel="noopener">https://github.com/Libitum/jellyfin-plugin-douban/tree/v0.5.0</a><br>下载Jellyfin.Plugin.Douban压缩包解压后放到/mnt/user/appdata/jellyfin/data/plugins路径。</p>
 <h4 id="emsp-emsp-附：N1-COREELEC添加网络共享文件夹的方法"><a href="#emsp-emsp-附：N1-COREELEC添加网络共享文件夹的方法" class="headerlink" title="&emsp;&emsp;附：N1 COREELEC添加网络共享文件夹的方法"></a>&emsp;&emsp;<strong>附：N1 COREELEC添加网络共享文件夹的方法</strong></h4><p>视频→添加视频→添加网络位置，输入局域网共享服务器\ip和共享的文件夹名称，还有输入账户和密码。</p>
 <img src="/2021/04/25/j4125nas/n1.jpg" class="" title="COREELEC添加网络共享1">
 <img src="/2021/04/25/j4125nas/n12.jpg" class="" title="COREELEC添加网络共享2">
@@ -423,9 +426,16 @@ daovoice('update');
 <p>注意：<br>①zdir就安装在/mnt/user/nas/yunpan路径，同时自动显示该路径下的文件夹和文件，屏蔽自身安装文件，后台管理账号密码以及增加屏蔽对象，也可以在安装文件夹zdir下的config.php中修改。<br>②对于页面滚动广告，可以删除zdir/static目录的zdir.js文件，如果删除文件或更改内容后依然显示旧内容，是因为本地的zdir.js文件默认没有进入到php配置文件，php配置文件里默认调用的是libs.xiaoz.top的官方zdir.js文件，这就需要我们把php配置文件中的libs.xiaoz.top的地址改成我们本地zdir.js文件的地址才能使之生效。php配置文件在zdir/template临时目录，找到footer.php文件。打开，代码出现了URL链接（<a href="https://libs.xiaoz.top/assets/zdir.js），将其替换为（../static/zdir.js" target="_blank" rel="noopener">https://libs.xiaoz.top/assets/zdir.js），将其替换为（../static/zdir.js</a> （../表示上一级目录，./表示当前目录）<br>③还有修改zdir/template/header.php文件可以更改顶部导航栏项目。<br>④要去掉导航栏下方带红色框滚动消息广告，删除/zdir/functions/home.php文件中126~131行的<!--滚动消息-->代码。<br>⑤要修改zdir文本查看器默认字号大小和添加自动换行功能，在/functions/viewtext.php文件的代码font-family:  Arial,sans-serif; 下面添加一行【font-size:  20px;】表示字号20，智慧黑板显示最好设置55；再添加一行【white-space:  pre-wrap;】表示自动换行）。</p>
 <p>&emsp;&emsp;7、安装mariadb数据库<br>应用市场，名称mariadb端口3306:3306路径默认，root密码password54321<br>进入Console用命令一步一步创建数据库和用户，如常用命令：<br>mysql -uroot -p<br>登录数据库，然后输入密码，密码默认不可见。<br>CREATE USER ‘filerun’ IDENTIFIED by ‘password54321’;<br>创建一个用户，用户名filerun，可以自己定义，后面的密码输入前面创建Docker时候的密码password54321。<br>CREATE DATABASE IF NOT EXISTS filerun;<br>创建一个名为filerun的database，名字可以自定义。<br>GRANT ALL PRIVILEGES ON filerun.* TO ‘filerun’ IDENTIFIED BY ‘password54321’;<br>授权上面创建的用户filerun获得刚刚创建的名为filerun的database的权限。<br>quit<br>退出数据库</p>
 <p>安装数据库的目的是为了安装filerun这个网盘应用，不过官方文件太大，网友提供的镜像只要100M左右，但是是docker-compose.yaml方式安装，镜像名henryouly/filerun-alpine或henryouly/filerun-alpine-php-fpm<br>摸索改成unraid里边docker安装没有成功。后续再研究吧。</p>
-<p>&emsp;&emsp;8、安装aria2<br>镜像superng6/aria2:webui-latest用这个镜像的原因主要是提供者的说明文件是最详细的，更新也很勤快。包含了下载完成后自动删除.aria2文件脚本，内置最优的aria2配置文件，内置400多条最新trackers，每天自动更新trackers，可选开启回收站，可选下载任务完成后，保留目录结构移动文件。更多可手动调节参数，大量选项不需要修改conf文件。<br>docker run -d <br>  –name=aria2 <br>  -e PUID=1000 <br>  -e PGID=100 <br>  -e TZ=Asia/Shanghai <br>  -e SECRET=xxxxxx <br>  -e CACHE=256M <br>  -e PORT=6800 <br>  -e UT=true <br>  -e RUT=true <br>  -e FA=falloc <br>  -e QUIET=true <br>  -e SMD=true <br>  -p 6881:6881 <br>  -p 6881:6881/udp <br>  -p 6800:6800 <br>  -p 8099:80 <br>  -v /mnt/user/appdata/aria2/config:/config <br>  -v /mnt/user/movies:/downloads <br>  –restart unless-stopped <br>  superng6/aria2:webui-latest<br>创建成功后打开ip:8099即可。</p>
+<p>&emsp;&emsp;8、安装aria2<br>镜像superng6/aria2:webui-latest用这个镜像的原因主要是提供者的说明文件是最详细的，更新也很勤快。包含了下载完成后自动删除.aria2文件脚本，内置最优的aria2配置文件，内置400多条最新trackers，每天自动更新trackers，可选开启回收站，可选下载任务完成后，保留目录结构移动文件。更多可手动调节参数，大量选项不需要修改conf文件。<br>docker run -d <br>  –name=aria2 <br>  -e PUID=1000 <br>  -e PGID=100 <br>  -e TZ=Asia/Shanghai <br>  -e SECRET=xxxxxx <br>  -e CACHE=256M <br>  -e PORT=6800 <br>  -e UT=true <br>  -e RUT=true <br>  -e FA=falloc <br>  -e QUIET=true <br>  -e SMD=true <br>  -p 6881:6881 <br>  -p 6881:6881/udp <br>  -p 6800:6800 <br>  -p 8099:80 <br>  -v /mnt/user/appdata/aria2/config:/config <br>  -v /mnt/user/movies:/downloads <br>  –restart unless-stopped <br>  superng6/aria2:webui-latest<br>创建成功后打开ip:8099即可。<strong>注意：看图片，文字版每行命令后少了空格和右斜杠，自己复制后补上。</strong></p>
+<img src="/2021/04/25/j4125nas/aria2.png" class="" title="aria2命令安装">
+
+
 <p>&emsp;&emsp;9、创建Qbittorrent<br>docker create –name=qbittorrentee <br>    -e WEBUIPORT=8081  <br>    -e PUID=1000 <br>    -e PGID=100 <br>    -e TZ=Asia/Shanghai <br>    -p 6881:6881  <br>    -p 6881:6881/udp  <br>    -p 8081:8081  <br>    -v /mnt/user/appdata/qb:/config  <br>    -v /mnt/user/movies:/downloads  <br>    –restart unless-stopped  <br>    superng6/qbittorrentee:latest<br>创建成功后打开ip:8081即可。</p>
-<p>&emsp;&emsp;10、创建Transmission<br>docker create –name=transmission <br>-v /mnt/user/appdata/tr:/config <br>-v /mnt/user/movies:/downloads <br>-v /mnt/user/movies/watch:/watch <br>-e PGID=100 -e PUID=1000 <br>-e TZ=Asia/Shanghai <br>-p 9091:9091 -p 45555:45555 <br>-p 45555:45555/udp <br>oldiy/transmission-twc<br>创建成功后打开ip:9091即可。<br>注：/watch - 监视torrent的文件夹。可以使用 cat /etc/passwd 命令查看PGID和PUID。还有bt端口如果没有映射45555，可根据自定义的端口数字去Transmission设置里修改，然后重启容器即可。</p>
+<img src="/2021/04/25/j4125nas/Qbittorrent.png" class="" title="Qbittorrent命令安装">
+
+<p>&emsp;&emsp;10、创建Transmission<br>docker create –name=transmission <br>-v /mnt/user/appdata/tr:/config <br>-v /mnt/user/movies:/downloads <br>-v /mnt/user/movies/watch:/watch <br>-e PGID=100 -e PUID=1000 <br>-e TZ=Asia/Shanghai <br>-p 9091:9091 -p 45555:45555 <br>-p 45555:45555/udp <br>oldiy/transmission-twc<br>创建成功后打开ip:9091即可。</p>
+<img src="/2021/04/25/j4125nas/tr.png" class="" title="Transmission命令安装">
+<p>注：/watch - 监视torrent的文件夹。可以使用 cat /etc/passwd 命令查看PGID和PUID。还有bt端口如果没有映射45555，可根据自定义的端口数字去Transmission设置里修改，然后重启容器即可。</p>
 
       
 
