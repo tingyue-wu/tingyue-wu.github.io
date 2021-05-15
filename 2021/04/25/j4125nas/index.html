@@ -61,7 +61,7 @@
 <meta property="og:image" content="http://blog.lookni.cf/2021/04/25/j4125nas/Qbittorrent.png">
 <meta property="og:image" content="http://blog.lookni.cf/2021/04/25/j4125nas/tr.png">
 <meta property="article:published_time" content="2021-04-25T12:40:41.000Z">
-<meta property="article:modified_time" content="2021-05-12T07:52:11.096Z">
+<meta property="article:modified_time" content="2021-05-12T07:57:39.119Z">
 <meta property="article:author" content="书 半 卷">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
@@ -152,7 +152,7 @@ daovoice('update');
 			</ul>
 		</nav>
                                 <nav>
-总文章数 38
+总文章数 39
                                 </nav>
 		<nav class="header-smart-menu">
     		
@@ -426,7 +426,7 @@ daovoice('update');
 <p>注意：<br>①zdir就安装在/mnt/user/nas/yunpan路径，同时自动显示该路径下的文件夹和文件，屏蔽自身安装文件，后台管理账号密码以及增加屏蔽对象，也可以在安装文件夹zdir下的config.php中修改。<br>②对于页面滚动广告，可以删除zdir/static目录的zdir.js文件，如果删除文件或更改内容后依然显示旧内容，是因为本地的zdir.js文件默认没有进入到php配置文件，php配置文件里默认调用的是libs.xiaoz.top的官方zdir.js文件，这就需要我们把php配置文件中的libs.xiaoz.top的地址改成我们本地zdir.js文件的地址才能使之生效。php配置文件在zdir/template临时目录，找到footer.php文件。打开，代码出现了URL链接（<a href="https://libs.xiaoz.top/assets/zdir.js），将其替换为（../static/zdir.js" target="_blank" rel="noopener">https://libs.xiaoz.top/assets/zdir.js），将其替换为（../static/zdir.js</a> （../表示上一级目录，./表示当前目录）<br>③还有修改zdir/template/header.php文件可以更改顶部导航栏项目。<br>④要去掉导航栏下方带红色框滚动消息广告，删除/zdir/functions/home.php文件中126~131行的<!--滚动消息-->代码。<br>⑤要修改zdir文本查看器默认字号大小和添加自动换行功能，在/functions/viewtext.php文件的代码font-family:  Arial,sans-serif; 下面添加一行【font-size:  20px;】表示字号20，智慧黑板显示最好设置55；再添加一行【white-space:  pre-wrap;】表示自动换行）。</p>
 <p>&emsp;&emsp;7、安装mariadb数据库<br>应用市场，名称mariadb端口3306:3306路径默认，root密码password54321<br>进入Console用命令一步一步创建数据库和用户，如常用命令：<br>mysql -uroot -p<br>登录数据库，然后输入密码，密码默认不可见。<br>CREATE USER ‘filerun’ IDENTIFIED by ‘password54321’;<br>创建一个用户，用户名filerun，可以自己定义，后面的密码输入前面创建Docker时候的密码password54321。<br>CREATE DATABASE IF NOT EXISTS filerun;<br>创建一个名为filerun的database，名字可以自定义。<br>GRANT ALL PRIVILEGES ON filerun.* TO ‘filerun’ IDENTIFIED BY ‘password54321’;<br>授权上面创建的用户filerun获得刚刚创建的名为filerun的database的权限。<br>quit<br>退出数据库</p>
 <p>安装数据库的目的是为了安装filerun这个网盘应用，不过官方文件太大，网友提供的镜像只要100M左右，但是是docker-compose.yaml方式安装，镜像名henryouly/filerun-alpine或henryouly/filerun-alpine-php-fpm<br>摸索改成unraid里边docker安装没有成功。后续再研究吧。</p>
-<p>&emsp;&emsp;8、安装aria2<br>镜像superng6/aria2:webui-latest用这个镜像的原因主要是提供者的说明文件是最详细的，更新也很勤快。包含了下载完成后自动删除.aria2文件脚本，内置最优的aria2配置文件，内置400多条最新trackers，每天自动更新trackers，可选开启回收站，可选下载任务完成后，保留目录结构移动文件。更多可手动调节参数，大量选项不需要修改conf文件。<br>docker run -d <br>  –name=aria2 <br>  -e PUID=1000 <br>  -e PGID=100 <br>  -e TZ=Asia/Shanghai <br>  -e SECRET=xxxxxx <br>  -e CACHE=256M <br>  -e PORT=6800 <br>  -e UT=true <br>  -e RUT=true <br>  -e FA=falloc <br>  -e QUIET=true <br>  -e SMD=true <br>  -p 6881:6881 <br>  -p 6881:6881/udp <br>  -p 6800:6800 <br>  -p 8099:80 <br>  -v /mnt/user/appdata/aria2/config:/config <br>  -v /mnt/user/movies:/downloads <br>  –restart unless-stopped <br>  superng6/aria2:webui-latest<br>创建成功后打开ip:8099即可。<strong>注意：看图片，文字版每行命令后少了空格和右斜杠，自己复制后补上。</strong></p>
+<p>&emsp;&emsp;8、安装aria2<br>镜像superng6/aria2:webui-latest用这个镜像的原因主要是提供者的说明文件是最详细的，更新也很勤快。包含了下载完成后自动删除.aria2文件脚本，内置最优的aria2配置文件，内置400多条最新trackers，每天自动更新trackers，可选开启回收站，可选下载任务完成后，保留目录结构移动文件。更多可手动调节参数，大量选项不需要修改conf文件。<br>docker run -d –name=aria2 <br>  -e PUID=1000 -e PGID=100 <br>  -e TZ=Asia/Shanghai <br>  -e SECRET=xxxxxx <br>  -e CACHE=256M <br>  -e PORT=6800 <br>  -e UT=true <br>  -e RUT=true <br>  -e FA=falloc <br>  -e QUIET=true <br>  -e SMD=true <br>  -p 6881:6881 <br>  -p 6881:6881/udp <br>  -p 6800:6800 <br>  -p 8099:80 <br>  -v /mnt/user/appdata/aria2/config:/config <br>  -v /mnt/user/movies:/downloads <br>  –restart unless-stopped <br>  superng6/aria2:webui-latest<br>创建成功后打开ip:8099即可。<strong>注意：看图片，文字版每行命令后少了空格和右斜杠，自己复制后补上。</strong></p>
 <img src="/2021/04/25/j4125nas/aria2.png" class="" title="aria2命令安装">
 
 
